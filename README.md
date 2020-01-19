@@ -1,6 +1,6 @@
 # Job Application
 
-> Auto-deployment via zeit.co is active, find here the [Live Application](https://job-application.now.sh). This is a spontaneous project experiment for explorative experimentation with different frameworks and technologies to achieve an acceptable result pragmatically.
+Auto-deployment via zeit.co is active, find here the [Live Application](https://job-application.now.sh). This is a spontaneous project experiment for explorative experimentation with different frameworks and technologies to achieve an acceptable result pragmatically.
 
 ## Prerequisites
 
@@ -44,6 +44,6 @@ For great TypeScript support [VS Code](https://code.visualstudio.com/) is recomm
 ## TODOs
 
 [ ] Migrate all scripts to `lang='ts'`  
-[ ] Move local classes to custom theme (variables.scss)  
+[ ] Move scoped styles to global custom theme (variables.scss)  
 [ ] Load all static JSON data via graphQL backend  
-[ ] Add simple rust canvas animation
+[ ] Add simple canvas animation / etc. made with wasmand rust
