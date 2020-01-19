@@ -35,3 +35,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 ## TODOs
 
 [ ] Migrate all scripts to `lang='ts'`
+[ ] Move local classes to custom theme (variables.scss)

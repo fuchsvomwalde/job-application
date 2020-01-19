@@ -1,23 +1,37 @@
 <template>
   <div class="content">
-    <section class="first">
+    <section class="first pa-0">
       <v-parallax
         class="py-12"
-        dark
-        src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        :src="require('~/static/parallax-bgr.svg')"
         height="auto"
       >
         <v-container>
-          <h1 class="display-2 my-2">{{ $t('about') }}</h1>
-          <p>{{ getI18n(intro, $i18n.locale) }}</p>
+          <h1 class="my-2 text--primary">{{ $t('about') }}</h1>
+          <p class="my-8 text--secondary">{{ getI18n(intro, $i18n.locale) }}</p>
           <v-row justify="center">
-            <v-expansion-panels popout>
+            <v-expansion-panels popout flat>
               <v-expansion-panel v-for="(argument, i) in args" :key="i">
-                <v-expansion-panel-header>{{
-                  getI18n(argument.title, $i18n.locale)
-                }}</v-expansion-panel-header>
+                <v-expansion-panel-header hide-actions>
+                  <template v-slot="{ open }">
+                    <img :src="argument.icon" class="mr-4 flex-grow-0" />
+                    <span class="panel-header text--secondary">
+                      {{ getI18n(argument.title, $i18n.locale) }}
+                    </span>
+                    <v-spacer></v-spacer>
+                    <img
+                      src="~/static/arrow-down.svg"
+                      :class="{
+                        'panel-action': true,
+                        open: open
+                      }"
+                    />
+                  </template>
+                </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  {{ getI18n(argument.text, $i18n.locale) }}
+                  <p class="small py-2 text--secondary">
+                    {{ getI18n(argument.text, $i18n.locale) }}
+                  </p>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -25,9 +39,9 @@
         </v-container>
       </v-parallax>
     </section>
-    <section class="second py-12">
+    <section class="second">
       <v-container>
-        <h1 class="headline my-2">{{ $t('portfolio') }}</h1>
+        <h2 class="mb-12">{{ $t('portfolio') }}</h2>
         <v-layout row justify-center align-start wrap>
           <v-flex
             v-for="(project, i) in portfolio"
@@ -37,31 +51,40 @@
             sm6
             md4
           >
-            <v-card width="auto">
+            <v-card class="project-card" width="auto" flat>
               <v-img
                 class="white--text align-end"
+                :gradient="
+                  `to bottom, ${hexToRgbA(
+                    project.gradientColor,
+                    0
+                  )}, ${hexToRgbA(project.gradientColor, 0.2)}, ${hexToRgbA(
+                    project.gradientColor,
+                    0.8
+                  )}`
+                "
                 height="200px"
-                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                :src="project.src"
               >
-                <v-card-title>{{
-                  getI18n(project.title, $i18n.locale)
-                }}</v-card-title>
+                <v-card-title>
+                  <h3>
+                    {{ getI18n(project.title, $i18n.locale) }}
+                  </h3>
+                </v-card-title>
+                <v-card-subtitle class="white--text">{{
+                  getI18n(project.timeframe, $i18n.locale)
+                }}</v-card-subtitle>
               </v-img>
-              <v-card-subtitle class="pb-0">{{
-                getI18n(project.timeframe, $i18n.locale)
-              }}</v-card-subtitle>
               <v-card-text class="text--primary">
-                <!-- <v-expand-transition> -->
-                <!-- <div v-show="project.showtext"> -->
-                {{ getI18n(project.text, $i18n.locale) }}
-                <!-- </div> -->
-                <!-- </v-expand-transition> -->
+                <p class="small pa-0 ma-0 text--secondary">
+                  {{ getI18n(project.text, $i18n.locale) }}
+                </p>
               </v-card-text>
               <v-card-actions
                 ><v-spacer></v-spacer>
-                <v-menu v-model="value">
+                <v-menu transition="scale-transition" origin="top center">
                   <template v-slot:activator="{ on }">
-                    <v-btn color="orange" text v-on="on"
+                    <v-btn color="accent" text v-on="on"
                       >{{ $t('explore')
                       }}<v-icon small right>mdi-open-in-new</v-icon></v-btn
                     >
@@ -79,22 +102,17 @@
                     </v-list-item>
                   </v-list>
                 </v-menu>
-                <!-- <v-btn @click="project.showtext = !project.showtext" icon>
-              <v-icon>{{
-                project.showtext ? 'mdi-chevron-up' : 'mdi-chevron-down'
-              }}</v-icon>
-            </v-btn> -->
               </v-card-actions>
             </v-card>
           </v-flex>
         </v-layout>
       </v-container>
     </section>
-    <section class="third py-12">
+    <section class="third">
       <v-container>
-        <h1 class="headline white--text my-2">
+        <h2 class="white--text mb-12">
           {{ $t('links') }}
-        </h1>
+        </h2>
         <v-layout row justify-center align-start wrap>
           <v-flex
             v-for="(profile, i) in profiles"
@@ -113,10 +131,12 @@
             >
               <div class="d-flex flex-no-wrap justify-space-between">
                 <div>
-                  <v-card-title
-                    class="headline"
-                    v-text="getI18n(profile.title, $i18n.locale)"
-                  ></v-card-title>
+                  <v-card-title>
+                    <h3>
+                      {{ getI18n(profile.title, $i18n.locale)
+                      }}<v-icon right>mdi-open-in-new</v-icon>
+                    </h3>
+                  </v-card-title>
                   <v-card-subtitle>{{
                     getI18n(profile.subtitle, $i18n.locale)
                   }}</v-card-subtitle>
@@ -134,6 +154,7 @@
 </template>
 
 <script>
+import hexToRgbA from '~/utils/color'
 // import Logo from '~/components/Logo.vue'
 // import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
@@ -155,6 +176,7 @@ export default {
           de: 'Pragmatisches Design mit Liebe',
           en: 'Pragmatic design with love'
         },
+        icon: require('~/static/love.svg'),
         text: {
           de:
             'Ich will ganz transparent zu euch sein, ich habe keinen akademischen Hintergrund im Design-Bereich. All meine kreativen Fertigkeiten und mein Wissen über Design-Prozesse habe ich mir über zwei Jahrzehnte rein autodidaktisch und innerhalb der Praxis angeeignet. Alle für ein Unternehmen und die Produktentwicklung wichtigen Bestandteile gehören jedoch zu meinem Grundlagenwissen. Angefangen von der Aufgabe aus Unternehmenswerten eine klare und markante Designsprache zu schaffen, über Design-Guides für digitale- wie analoge Inhalte, UI Mockups, hinzu kreativen Schaffungsprozessen wie Design-Thinking sind mir keine Erfahrung ausgeblieben. Was mich in allen Tätigkeiten hierbei stets begleitet hat ist klarer Pragmatismus, dabei bevorzuge ich die Möglichkeit früh und öfter über Ergebnisse zu iterieren als ein Design im Stillen zu lange zu perfektionieren. Prismas Designsprache hat mich in Vergangenheit in besonderem Maße durch seine Einfachheit und Klarheit angesprochen, nein wirklich ich liebe es. Das Richtige Maß an Kontinuität und Evolution durch stetiges Hinterfragen zu finden ist eine der spannenden Herausforderungen die mich reizen.',
@@ -167,6 +189,7 @@ export default {
           de: 'Enge Verzahnung von Design und Entwicklung',
           en: 'Close integration of design and development'
         },
+        icon: require('~/static/intersection.svg'),
         text: {
           de:
             'Anders als bei der Erstellung von Design-Templates für Powerpoint oder die Gestaltung für den Print-Bereich ist die Kollaboration zwischen Design und Entwicklung für die Produktentwicklung besonders von Bedeutung. Zu Wissen welche Möglichkeiten mit einem Web-Framework gegeben sind und wie Web-Entwicklung funktioniert ist von erheblichem Vorteil um nicht nur liebevolle sondern auch technisch durchdachte UI-Kompenenten und/oder Webdesigns zu entwerfen. In meinen 3 Jahren bei PulseShift habe ich parallel als Auftragsentwickler UI-Komponenten gebaut. Von Designern schlecht durchdachte Komponenten, vernachlässigte Randfälle und wenig Verständnis für die Web-Entwicklung waren Hauptursachen für hohe Entwicklungs- und Testaufwände. Ich kenne den Prozess bereits von beiden Seiten, meine UI Mockup entstehen daher meistens bereits mit dem Code zur Umsetzung in Gedanken.',
@@ -177,8 +200,9 @@ export default {
       {
         title: {
           de: 'Über eine gute Integration hinaus: Design-Systeme und mehr.',
-          en: 'Beyond good integration: Design-Systems and more.'
+          en: 'Beyond good integration – Design-Systems and more'
         },
+        icon: require('~/static/integration.svg'),
         text: {
           de:
             'Adobe XD, aber auch Sketch/Figma/etc. in Kombination mit Zeplin haben die Schnittstelle zwischen Design und Entwicklung bereits nachhaltig verändert. Der Übergang wird reibungsfreier und ist besser integriert als je zu vor. Diese Schnittstelle noch weiter zu denken und zu optimieren ist ein Bereich der mich auf besondere Art und Weise  reizt. Design-Systeme sind hierbei eine von vielen neuen Domänen um diesen Bedarf zu adressieren. Design-Systeme sind nicht zu verwechseln mit Design-Guides oder Component-Libraries sondern beschreiben eine technische Implementierung eines Design-Guides. Dies kann in Form einer Mikroservice API sein, oder eines low-level SDK zur Component Entwicklung. Ziel ist immer das selbe; die Produktentwicklung zu beschleunigen und real-time Rollouts von Design-Update zu ermöglichen. Dies soll ein Beispiel von vielen sein dessen Mehrwert und Potenziale ich gerne langfristig bei Prisma ergründen würde.',
@@ -197,8 +221,8 @@ export default {
             'Find the stations of my life so far, both full-time and voluntary.'
         },
         href: 'https://de.linkedin.com/in/jascha-a-quintern-0290ba91',
-        color: '#0F7AD8',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg'
+        color: 'accent',
+        img: require('~/static/cv.svg')
       },
       {
         title: { de: 'GitHub', en: 'GitHub' },
@@ -209,8 +233,8 @@ export default {
             'Unfortunately only a fraction of my work is on GitHub. But have fun browsing through my various little side projects.'
         },
         href: 'https://github.com/fuchsvomwalde',
-        color: '#3D5866',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg'
+        color: 'secondary',
+        img: require('~/static/code.svg')
       },
       {
         title: { de: 'Homepage', en: 'Homepage' },
@@ -221,13 +245,15 @@ export default {
             'My digital fun business card: A link list of different online profiles.'
         },
         href: 'https://jascha-quintern.de/',
-        color: '#15BD76',
-        img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg'
+        color: 'success',
+        img: require('~/static/website.svg')
       }
     ],
     portfolio: [
       {
         title: { de: 'PulseShift', en: 'PulseShift' },
+        src: require('~/static/bgr_purple.jpg'),
+        gradientColor: 'primary',
         timeframe: { de: '2016-2019', en: '2016-2019' },
         text: {
           de:
@@ -257,6 +283,8 @@ export default {
       },
       {
         title: { de: 'Eeezy', en: 'Eeezy' },
+        src: require('~/static/bgr_pattern.svg'),
+        gradientColor: 'warning',
         timeframe: { de: '2019', en: '2019' },
         text: {
           de:
@@ -282,6 +310,8 @@ export default {
       },
       {
         title: { de: 'Climathon', en: 'Climathon' },
+        src: require('~/static/bgr_earth.svg'),
+        gradientColor: 'primary',
         timeframe: { de: '2019', en: '2019' },
         text: {
           de:
@@ -317,20 +347,77 @@ export default {
         return i18nObj[lang]
       }
       return ''
+    },
+    hexToRgbA(themeColor, alpha) {
+      const hex = this.$vuetify.theme.isDark
+        ? this.$vuetify.theme.themes.dark[themeColor]
+        : this.$vuetify.theme.themes.light[themeColor] || '#000000'
+
+      return hexToRgbA(hex, alpha)
     }
   }
 }
 </script>
 
-<style scoped>
-section.first {
-  background: #ffffff;
+<style scoped lang="scss">
+section {
+  padding: 144px 0;
+  &.first {
+    background: linear-gradient(rgb(355, 255, 255) 0%, rgb(239, 243, 245) 80%);
+  }
+  &.second {
+    background: linear-gradient(rgb(239, 243, 245) 0%, rgb(244, 248, 250) 100%);
+  }
+  &.third {
+    background: linear-gradient(180deg, #0c344b 0%, #295166 100%);
+  }
 }
-section.second {
-  background: linear-gradient(rgb(239, 243, 245) 0%, rgb(244, 248, 250) 100%);
+
+h1 {
+  font-size: 48px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
-section.third {
-  background: linear-gradient(180deg, #0c344b 0%, #295166 100%);
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+}
+p {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.6;
+  &.small {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+}
+
+.panel-header {
+  line-height: 1.2;
+  font-size: 20px;
+  font-weight: 600;
+}
+.panel-action {
+  transition: all 0.2s ease-in-out;
+  transform: rotate(0deg);
+  flex-grow: 0;
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.project-card {
+  box-shadow: rgba(8, 35, 51, 0.03) 0px 0px 2px,
+    rgba(8, 35, 51, 0.05) 0px 3px 6px;
 }
 </style>
 

@@ -1,5 +1,5 @@
 {
-  "name": "application-tech-boilerplate",
+  "name": "job-application",
   "version": "1.0.0",
   "description": "Nuxt / Prisma / etc. Playground",
   "author": "Jascha A. Quintern",
@@ -39,6 +39,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "husky": "^2.6.0",
     "lint-staged": "^8.2.1",
+    "nuxt-webfontloader": "^1.1.0",
     "prettier": "^1.16.4",
     "stylelint": "^10.1.0"
   }

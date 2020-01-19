@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   mode: 'universal',
   /*
@@ -64,8 +62,18 @@ export default {
           alwaysRedirect: true
         }
       }
-    ]
+    ],
+    // Doc: https://github.com/Developmint/nuxt-webfontloader
+    'nuxt-webfontloader'
   ],
+  /*
+   ** Load webfonts
+   */
+  webfontloader: {
+    google: {
+      families: ['Montserrat:700', 'Open+Sans:400,600,700', 'Walter+Turncoat']
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -77,26 +85,24 @@ export default {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    defaultAssets: {
+      font: {
+        family: 'Open Sans'
+      },
+      icons: 'mdi'
+    },
+    treeShake: true,
     theme: {
       dark: false,
       themes: {
         light: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        },
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          primary: '#0c344b',
+          accent: '#0F7AD8',
+          secondary: '#3d5866',
+          info: '#00CCE4',
+          warning: '#e86e16',
+          error: '#ff4f56',
+          success: '#15BD76'
         }
       }
     }
