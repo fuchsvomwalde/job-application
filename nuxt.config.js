@@ -57,9 +57,9 @@ export default {
         vueI18n: {},
         vueI18nLoader: true,
         detectBrowserLanguage: {
-          useCookie: true,
+          useCookie: false,
           cookieKey: 'i18n_redirected',
-          alwaysRedirect: true
+          alwaysRedirect: false
         }
       }
     ],

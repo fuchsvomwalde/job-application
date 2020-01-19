@@ -20,7 +20,7 @@
             v-if="!isMobile"
             :x-large="!isMobile"
             class="mx-4 text--secondary"
-            href="/"
+            href="https://github.com/fuchsvomwalde/job-application"
             target="_blank"
             depressed
           >
