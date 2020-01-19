@@ -22,6 +22,7 @@
                     <img
                       src="~/static/arrow-down.svg"
                       :class="{
+                        'flex-grow-0': true,
                         'panel-action': true,
                         open: open
                       }"

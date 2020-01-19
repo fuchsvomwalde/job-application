@@ -11,7 +11,7 @@ This project was tested and setup on MacOS 10.15.2 and requires:
 Install plugins in your IDE to support TypeScript, etc.
 
 - for great TypeScript support [VS Code](https://code.visualstudio.com/) is recommended
-- TODO: list a bunch of useful plugins.
+- TODO: list a bunch of used plugins
 
 ## Build Setup
 
@@ -23,11 +23,11 @@ $ yarn install
 $ yarn dev
 
 # build for production and launch server
-$ yarn build
+$ yarn build-ssr
 $ yarn start
 
-# generate static project
-$ yarn generate
+# generate static project (renamed for zeit.co hosting)
+$ yarn build
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
@@ -35,4 +35,6 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 ## TODOs
 
 [ ] Migrate all scripts to `lang='ts'`  
-[ ] Move local classes to custom theme (variables.scss)
+[ ] Move local classes to custom theme (variables.scss)  
+[ ] Load all static JSON data via graphQL backend  
+[ ] Add simple rust canvas animation

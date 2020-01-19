@@ -41,7 +41,11 @@
                   {{ $t($i18n.locale === 'de' ? 'switch2en' : 'switch2de') }}
                 </v-list-item-title>
               </v-list-item>
-              <v-list-item v-if="isMobile" href="/" target="_blank">
+              <v-list-item
+                v-if="isMobile"
+                href="https://github.com/fuchsvomwalde/job-application"
+                target="_blank"
+              >
                 <v-list-item-title>
                   {{ $t('viewOnGH') }}
                 </v-list-item-title>
