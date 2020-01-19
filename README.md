@@ -1,17 +1,14 @@
-# application-tech-boilerplate
+# Job Application
 
-> Nuxt / Prisma / etc. Playground
+> Auto-deployment via zeit.co is active, find here the [Live Application](https://job-application.now.sh). This is a spontaneous project experiment for explorative experimentation with different frameworks and technologies to achieve an acceptable result pragmatically.
 
 ## Prerequisites
 
-This project was tested and setup on MacOS 10.15.2 and requires:
+> This project was tested and setup on MacOS and makes no claim to run under Windows.
+
+The following installations are required before running the project on your machine:
 
 - [node 12+ LTS](https://nodejs.org/en/)
-
-Install plugins in your IDE to support TypeScript, etc.
-
-- for great TypeScript support [VS Code](https://code.visualstudio.com/) is recommended
-- TODO: list a bunch of used plugins
 
 ## Build Setup
 
@@ -31,6 +28,18 @@ $ yarn build
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Dev Setup
+
+> This project was tested and setup on MacOS and makes no claim to run under Windows.
+
+For great TypeScript support [VS Code](https://code.visualstudio.com/) is recommended as your code editor. Furthermore the following extensions might be useful for this project:
+
+- Babel JavaScript _VSCode syntax highlighting for today's JavaScript_
+- EditorCOnfig for VS Code _EditorConfig Support for Visual Studio Code_
+- ESLint _Integrates ESLint JavaScript into VS Code_
+- Vetur _Vue tooling for VS Code_
+- Prettier _Code formatter using prettier_
 
 ## TODOs
 
