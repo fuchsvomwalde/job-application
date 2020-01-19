@@ -10,7 +10,7 @@ This project was tested and setup on MacOS 10.15.2 and requires:
 
 Install plugins in your IDE to support TypeScript, etc.
 
-- we recommended [VS Code](https://code.visualstudio.com/)
+- for great TypeScript support [VS Code](https://code.visualstudio.com/) is recommended
 - TODO: list a bunch of useful plugins.
 
 ## Build Setup
@@ -34,5 +34,5 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## TODOs
 
-[ ] Migrate all scripts to `lang='ts'`
+[ ] Migrate all scripts to `lang='ts'`  
 [ ] Move local classes to custom theme (variables.scss)
