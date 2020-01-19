@@ -5,16 +5,17 @@
 ## Prerequisites
 
 This project was tested and setup on MacOS 10.15.2 and requires:
-* [node 12+ LTS](https://nodejs.org/en/)
+
+- [node 12+ LTS](https://nodejs.org/en/)
 
 Install plugins in your IDE to support TypeScript, etc.
-* we recommended [VS Code](https://code.visualstudio.com/)
-* TODO: list a bunch of useful plugins.
 
+- we recommended [VS Code](https://code.visualstudio.com/)
+- TODO: list a bunch of useful plugins.
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 
@@ -30,3 +31,7 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## TODOs
+
+[ ] Migrate all scripts to `lang='ts'`
