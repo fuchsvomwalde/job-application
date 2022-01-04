@@ -6,14 +6,16 @@
       height="144"
       fixed
       app
-      hide-on-scroll
-      elevation="1"
+      elevation="10"
     >
       <v-container>
         <v-layout justify-center align-center>
-          <img :src="require('~/static/prisma.svg')" />
-          <span class="ml-2 name">{{ $t('title') }}</span>
-          <span class="mr-2 prisma">{{ `&nbsp;@ ${$t('prisma')}` }}</span>
+          <img :src="require('~/static/logo.svg')" height="32px" width="32px" />
+          <span class="ml-2 name">{{ $t('title') }}</span
+          >&nbsp;
+          <span class="mr-2 secondaryTitle">{{
+            $t('secondaryTitle').toUpperCase()
+          }}</span>
           <v-spacer />
           <v-spacer />
           <v-btn
@@ -30,7 +32,8 @@
           <v-menu transition="scale-transition" origin="top center">
             <template v-slot:activator="{ on }">
               <v-btn :small="isMobile" fab depressed v-on="on">
-                <img src="~/static/more.svg" />
+                <v-icon v-if="!isMobile">mdi-translate</v-icon>
+                <v-icon v-if="isMobile">mdi-dots-vertical</v-icon>
               </v-btn>
             </template>
             <v-list>
@@ -60,7 +63,7 @@
       <v-footer class="white--text">
         <v-container>
           <v-layout justify-start align-center>
-            <span>&copy; 2019</span>
+            <span>&copy; 2022</span>
             <v-spacer></v-spacer>
             <span class="handscript start">{{ $t('sloganBeforeHeart') }}</span>
             <v-img
@@ -122,17 +125,18 @@ $break-small: 600px;
 
 // HEADER
 .name,
-.prisma {
+.secondaryTitle {
   color: rgb(12, 52, 75);
   user-select: none;
   font-size: 18px;
   font-family: 'Open Sans';
-  letter-spacing: -0.01em;
   white-space: nowrap;
   &.name {
+    letter-spacing: 0px;
     font-weight: 400;
   }
-  &.prisma {
+  &.secondaryTitle {
+    letter-spacing: 1.5px;
     font-weight: 700;
   }
 }
@@ -144,7 +148,7 @@ footer.v-footer {
     font-size: 10px;
   }
   .handscript {
-    font-family: 'Walter Turncoat', cursive;
+    font-family: 'Indie Flower', cursive;
     letter-spacing: 1.5px;
     &.start {
       text-align: right;
@@ -185,7 +189,7 @@ footer.v-footer {
 <i18n>
 {
   "en": {
-    "prisma": "Prisma",
+    "secondaryTitle": "Portfolio",
     "title": "Jascha A. Quintern",
     "switch2en": "Switch to EN",
     "switch2de": "Switch to DE",
@@ -194,7 +198,7 @@ footer.v-footer {
     "sloganAfterHeart": "by Jascha A. Quintern"
   },
   "de": {
-    "prisma": "Prisma",
+    "secondaryTitle": "Portfolio",
     "title": "Jascha A. Quintern",
     "switch2en": "Umschalten auf EN",
     "switch2de": "Umschalten auf DE",

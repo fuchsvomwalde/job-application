@@ -5,7 +5,7 @@ export default {
    */
   head: {
     titleTemplate: '%s',
-    title: 'Job Application',
+    title: 'Jascha A. Quintern • Portfolio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -15,7 +15,7 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }]
   },
   /*
    ** Customize the progress-bar color
@@ -52,15 +52,16 @@ export default {
       'nuxt-i18n',
       {
         strategy: 'no_prefix',
-        locales: ['de', 'en'],
+        locales: ['en', 'de'],
         defaultLocale: 'en',
         vueI18n: {},
         vueI18nLoader: true,
-        detectBrowserLanguage: {
-          useCookie: false,
-          cookieKey: 'i18n_redirected',
-          alwaysRedirect: false
-        }
+        detectBrowserLanguage: false
+        //  {
+        //   useCookie: true,
+        //   cookieKey: 'i18n_redirected',
+        //   alwaysRedirect: true
+        // }
       }
     ],
     // Doc: https://github.com/Developmint/nuxt-webfontloader
@@ -71,7 +72,7 @@ export default {
    */
   webfontloader: {
     google: {
-      families: ['Montserrat:700', 'Open+Sans:400,600,700', 'Walter+Turncoat']
+      families: ['Montserrat:700', 'Open+Sans:400,600,700', 'Indie+Flower']
     }
   },
   /*

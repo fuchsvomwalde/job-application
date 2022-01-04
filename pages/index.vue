@@ -87,7 +87,9 @@
                   <template v-slot:activator="{ on }">
                     <v-btn color="accent" text v-on="on"
                       >{{ $t('explore')
-                      }}<v-icon small right>mdi-open-in-new</v-icon></v-btn
+                      }}<v-icon small right
+                        >mdi-arrow-down-drop-circle-outline</v-icon
+                      ></v-btn
                     >
                   </template>
                   <v-list>
@@ -167,22 +169,22 @@ export default {
   data: () => ({
     intro: {
       de:
-        'Dies ist keine gewöhnliche Bewerbung auf die Rolle eines Lead Designers. Ihr werdet hier keine sonst üblichen Dribble Portfolios oder klassischen Designstudien finden. Also was soll das ganze? Seit nun über 5 Jahren arbeite ich in einer hybriden Rolle aus Designer und Entwickler mit Gesamtverantwortung über beide Bereiche. Ihr könnt mich als Möglichen Bewerber für eine reine Designer-, wie auch eine reine Entwickler-Rolle betrachten, doch ich möchte euch hier meinen Mehrwert als Designer mit starkem Tech-Hintergrund darlegen und euch so auch einen Einblick geben wie ich gerne meine Rolle bei Prisma interpretieren würde.',
+        'Ich bin Softwareentwickler, UI/UX-Designer und Tech-Unternehmer. Ich strebe nach lebenslangem Lernen, Teamarbeit, Technologie und kreativem Ausdruck. Aus diesem Grund liegen meine Stärken und Talente in den unterschiedlichen Kombinationen dieser Leidenschaften, von Konzepterstellung, über Design hinzu technischer Produktentwicklung.',
       en:
-        "This is not an ordinary application for the role of Lead Designer. You won't find any of the usual dribble portfolios or classic design studies here. So what's the point? For over 5 years now I have been working in a hybrid role of designer and developer with overall responsibility for both areas. You can consider me as a possible candidate for a designer-only role as well as a developer-only role, but I would like to show you my added value as a designer with a strong tech background and give you an insight into how I would like to interpret my role at Prisma."
+        'I am a software developer, UI/UX designer and tech entrepreneur. I strive for lifelong learning, teamwork, technology, and creative expression. For this reason, my strengths and talents lie in the various combinations of these passions, from concept creation, to design, to technical product development.'
     },
     args: [
       {
         title: {
-          de: 'Pragmatisches Design mit Liebe',
-          en: 'Pragmatic design with love'
+          de: 'Meine Vorstellung von Designprozessen',
+          en: 'My idea of design processes'
         },
         icon: require('~/static/love.svg'),
         text: {
           de:
-            'Ich will ganz transparent zu euch sein, ich habe keinen akademischen Hintergrund im Design-Bereich. All meine kreativen Fertigkeiten und mein Wissen über Design-Prozesse habe ich mir über zwei Jahrzehnte rein autodidaktisch und innerhalb der Praxis angeeignet. Alle für ein Unternehmen und die Produktentwicklung wichtigen Bestandteile gehören jedoch zu meinem Grundlagenwissen. Angefangen von der Aufgabe aus Unternehmenswerten eine klare und markante Designsprache zu schaffen, über Design-Guides für digitale- wie analoge Inhalte, UI Mockups, hinzu kreativen Schaffungsprozessen wie Design-Thinking sind mir keine Erfahrung ausgeblieben. Was mich in allen Tätigkeiten hierbei stets begleitet hat ist klarer Pragmatismus, dabei bevorzuge ich die Möglichkeit früh und öfter über Ergebnisse zu iterieren als ein Design im Stillen zu lange zu perfektionieren. Prismas Designsprache hat mich in Vergangenheit in besonderem Maße durch seine Einfachheit und Klarheit angesprochen, nein wirklich ich liebe es. Das Richtige Maß an Kontinuität und Evolution durch stetiges Hinterfragen zu finden ist eine der spannenden Herausforderungen die mich reizen.',
+            'In meiner aktuellen Rolle als technischer Projektmanager, Softwarearchitekt, Entwickler und User Experience-Spezialist bei osapiens unterstütze ich meine Kollegen dabei, Produkte zu entwickeln, die unsere Kunden begeistern. Zu meinen Aufgaben gehört es, Teams aufzubauen und zu unterstützen, unsere UI/UX-Designstrategie mitzugestalten, Softwareentwicklungsprozesse zu optimieren und an der Fullstack-Entwicklung unserer mehr-mandantenfähigen Cloud-Anwendungen mitzuwirken. Über die Jahre als UX-Designer und Design Lead habe ich mir eine klare Meinung geschaffen, wie Designprozesse in einem Unternehmen implementiert und gelebt werden sollten. Eine erste wichtige Grundlage, ist das Schaffen einer unverwechselbaren Designsprache und UX-Strategie, sodass daraus Design-Guides für digitale und analoge Inhalte, UI-Komponentenbibliotheken und Blaupausen für kreative Gestaltungsprozesse abgeleitet werden können. Der kreative Gestaltungsprozess sollte dabei den Endbenutzer stets im Fokus haben, wichtig hierbei ist insb. die Möglichkeit in kurzen Iterationen neue Prototypen (bspw. als Mockup oder Anwendung mit Mockdaten) zu validieren und unkompliziert Feedback einzuholen. Dies gelingt nur, wenn Design- und Entwicklungsprozesse gut miteinander abgestimmt sind. Ich ziehe die Möglichkeit vor, frühzeitig und öfter zu über Ergebnisse zu iterieren, als ein Design zu lange in Ruhe zu perfektionieren (ein MVP darf weh tun).',
           en:
-            "I want to be completely transparent to you, I have no academic background in design. All my creative skills and my knowledge of design processes I have acquired over two decades purely autodidactically and within practice. However, all components that are important for a company and product development are part of my basic knowledge. Starting with the task of creating a clear and distinctive design language based on corporate values, design guides for digital and analogue content, UI mockups, and creative creation processes such as design thinking, are part of my experience. What has always accompanied me in all my activities is clear pragmatism, and I prefer the possibility of iterating on results early and more often than silently perfecting a design for too long. Prisma's design language has appealed to me in the past especially through its simplicity and clarity, no really I love it. Finding the right degree of continuity and evolution through constant questioning is one of the exciting challenges that appeal to me."
+            'In my current role as a technical project manager, software architect, developer and user experience specialist at osapiens, I support my colleagues in developing products that delight our customers. My responsibilities include building and supporting teams, helping shape our UI/UX design strategy, optimizing software development processes, and contributing to the fullstack development of our multi-tenant cloud applications. Over the years as a UX designer and design lead, I have created a clear opinion of how design processes should be implemented and lived in an organization. A first important foundation, is to create a distinctive design language and UX strategy, so that design guides for digital and analog content, UI component libraries and blueprints for creative design processes can be derived from it. The creative design process should always focus on the end user, and it is particularly important to be able to validate new prototypes (e.g., as mockups or applications with mock data) in short iterations and to obtain uncomplicated feedback. This is only possible if design and development processes are well coordinated. I prefer the possibility to iterate on results early and more often than to spend too long perfecting a design (an MVP is allowed to hurt).'
         }
       },
       {
@@ -193,9 +195,9 @@ export default {
         icon: require('~/static/intersection.svg'),
         text: {
           de:
-            'Anders als bei der Erstellung von Design-Templates für Powerpoint oder die Gestaltung für den Print-Bereich ist die Kollaboration zwischen Design und Entwicklung für die Produktentwicklung besonders von Bedeutung. Zu Wissen welche Möglichkeiten mit einem Web-Framework gegeben sind und wie Web-Entwicklung funktioniert ist von erheblichem Vorteil um nicht nur liebevolle sondern auch technisch durchdachte UI-Kompenenten und/oder Webdesigns zu entwerfen. In meinen 3 Jahren bei PulseShift habe ich parallel als Auftragsentwickler UI-Komponenten gebaut. Von Designern schlecht durchdachte Komponenten, vernachlässigte Randfälle und wenig Verständnis für die Web-Entwicklung waren Hauptursachen für hohe Entwicklungs- und Testaufwände. Ich kenne den Prozess bereits von beiden Seiten, meine UI Mockup entstehen daher meistens bereits mit dem Code zur Umsetzung in Gedanken.',
+            'Anders als bei der Erstellung von Design-Templates für Powerpoint oder die Gestaltung für den Print-Bereich ist die Kollaboration zwischen Design und Entwicklung für die Produktentwicklung besonders von Bedeutung. Zu Wissen welche Möglichkeiten mit einem Frontend-Framework (Web- und/oder Native) gegeben sind ist von erheblichem Vorteil um nicht nur liebevolle sondern auch technisch durchdachte Mockups und Designs zu entwerfen. Von Designern schlecht durchdachte Komponenten, vernachlässigte Randfälle und wenig Verständnis für die technische Entwicklung sind Ursachen für hohe Entwicklungs- und Testaufwände. Als Designer und Entwickler kenne ich den Prozess bereits von beiden Seiten, meine Mockups entstehen daher mit gleichzeitigen Gedanken an die technische Implementierung. Darüberhinaus bin ich mit Tools, Methoden und Werkzeugen vertraut um das Design- und Entwicklungsteam eng miteinander zu verbinden (bspw. via Figma und Storybook).',
           en:
-            'In contrast to the creation of design templates for PowerPoint or the design for print, the collaboration between design and development is particularly important for product development. Knowing which possibilities are given with a web framework and how web development works is of considerable advantage to create not only delightful but also technically well thought-out UI components and/or web designs. During my 3 years at PulseShift I have been building UI components as a contract developer. Components poorly thought out by designers, overlooked edge cases and little understanding of web development were the main reasons for high development and testing efforts. I already know the process from both sides, so my UI mockups are usually created with the code for implementation in mind.'
+            'Unlike the creation of design templates for PowerPoint or the design for print, the collaboration between design and development is particularly important for product development. Knowing which possibilities are given with a frontend framework (web and/or native) is of considerable advantage to create not only loving but also technically well thought-out mockups and designs. Components poorly thought out by designers, neglected edge cases and little understanding of technical development are causes for high development and testing efforts. As a designer and developer I already know the process from both sides, so my mockups are created with simultaneous thoughts about the technical implementation. Furthermore, I am familiar with tools, methods and tools to closely connect the design and development team (e.g. via Figma and Storybook).'
         }
       },
       {
@@ -206,9 +208,9 @@ export default {
         icon: require('~/static/integration.svg'),
         text: {
           de:
-            'Adobe XD, aber auch Sketch/Figma/etc. in Kombination mit Zeplin haben die Schnittstelle zwischen Design und Entwicklung bereits nachhaltig verändert. Der Übergang wird reibungsfreier und ist besser integriert als je zu vor. Diese Schnittstelle noch weiter zu denken und zu optimieren ist ein Bereich der mich auf besondere Art und Weise  reizt. Design-Systeme sind hierbei eine von vielen neuen Domänen um diesen Bedarf zu adressieren. Design-Systeme sind nicht zu verwechseln mit Design-Guides oder Component-Libraries sondern beschreiben eine technische Implementierung eines Design-Guides. Dies kann in Form einer Mikroservice API sein, oder eines low-level SDK zur Component Entwicklung. Ziel ist immer das selbe; die Produktentwicklung zu beschleunigen und real-time Rollouts von Design-Update zu ermöglichen. Dies soll ein Beispiel von vielen sein dessen Mehrwert und Potenziale ich gerne langfristig bei Prisma ergründen würde.',
+            'Adobe XD, Figma und co. haben die Kollaboration zwischen Design und Entwicklung bereits nachhaltig verändert. Ich interessiere mich neben den etablierten Brot- und Butter Aufgaben der Design- und Entwicklungs-Abteilung insbesondere über erweiterte Möglichkeiten beide Bereiche zu integrieren und somit die Produktentwicklung auf das nächste Level zu heben. Hierzu zählen: 1. automatisiertes A/B Testing von Funktionen und Darstellungsvarianten, 2. Entwicklung von Design-Systemen in Form einer Mikroservice API für Design-Tokens, oder eines low-level SDKs zur UI Komponenten Entwicklung, mit dem Ziel echtzeit Rollouts von Design-Updates zu ermöglichen, 3. Erhebung von Benutzungsdaten und Benutzerfeedback zur Erstellung von Metriken (bspw. NPS Score)',
           en:
-            'Adobe XD, but also Sketch/Figma/etc. in combination with Zeplin have already changed the interface between design and development. The transition is smoother and better integrated than ever before. To think this interface even further and to optimize it is an area that appeals to me in a special way. Design systems are one of many new domains to address this need. Design systems are not to be confused with design guides or component libraries but describe a technical implementation of a design guide. This can be in the form of a microservice API, or a low-level SDK for component development. The goal is always the same; to accelerate product development and enable real-time rollouts of design updates. This is just one of many examples of the added value and potential I would like to explore in the long term with Prisma.'
+            'Adobe XD, Figma, and others have already changed the way design and development collaborate. Besides the established bread and butter tasks of the design and development department, I am especially interested in extended possibilities to integrate both areas and thus to lift product development to the next level. These include: 1. automated A/B testing of features and display variants, 2. development of design systems in the form of a microservice API for design tokens, or a low-level SDK for UI component development, with the goal of enabling real-time rollouts of design updates, 3. collection of user data and user feedback for the creation of metrics (e.g. NPS score).'
         }
       }
     ],
@@ -217,9 +219,9 @@ export default {
         title: { de: 'LinkedIn', en: 'LinkedIn' },
         subtitle: {
           de:
-            'Finde die bisherigen Stationen meines Lebens, haupt- wie ehrenamtliche.',
+            'Auf LinkedIn findest du meinen Lebenslauf und weitere Angaben meines beruflichen Werdegangs.',
           en:
-            'Find the stations of my life so far, both full-time and voluntary.'
+            'On LinkedIn you can find my resume and other details of my professional career.'
         },
         href: 'https://de.linkedin.com/in/jascha-a-quintern-0290ba91',
         color: 'accent',
@@ -229,9 +231,8 @@ export default {
         title: { de: 'GitHub', en: 'GitHub' },
         subtitle: {
           de:
-            'Leider befindet sich nur ein Bruchteil meines Schaffens auf GitHub. Dennoch viel Spaß beim durchstöbern meiner unterschiedlichsten kleinen Nebenprojekte.',
-          en:
-            'Unfortunately only a fraction of my work is on GitHub. But have fun browsing through my various little side projects.'
+            'Ein kleiner Ausschnitt meines Schaffens ist auch auf GitHub zu finden.',
+          en: 'A small part of my work can also be found on GitHub.'
         },
         href: 'https://github.com/fuchsvomwalde',
         color: 'secondary',
@@ -240,10 +241,8 @@ export default {
       {
         title: { de: 'Homepage', en: 'Homepage' },
         subtitle: {
-          de:
-            'Meine digitale Spaß-Visitenkarte: Eine Linkliste verschiedener Onlineprofile.',
-          en:
-            'My digital fun business card: A link list of different online profiles.'
+          de: 'Eine Linkliste verschiedener Onlineprofile.',
+          en: 'A link list of different online profiles.'
         },
         href: 'https://jascha-quintern.de/',
         color: 'success',
@@ -279,6 +278,15 @@ export default {
             },
             href:
               'https://xd.adobe.com/view/a374d196-82a5-47d4-7e94-3788014d7aaa-d545/'
+          },
+          {
+            title: {
+              de:
+                'Vortrag: Die Zukunft der Mitarbeiterbefragung @ UX-DAY CONFERENCE 2016 (Aufzeichnung auf YouTube)',
+              en:
+                'Lecture: The future of the employee survey @ UX-DAY CONFERENCE 2016 (recording on YouTube)'
+            },
+            href: 'https://youtu.be/VA4adJF3BTE'
           }
         ]
       },
@@ -289,9 +297,9 @@ export default {
         timeframe: { de: '2019', en: '2019' },
         text: {
           de:
-            'Eeezy ist das Startup eines Bekannten gewesen (ein Nebenprojekt), für dessen Frontend-Team ich Mockups auf Basis von Material UI erstellen sollte. Da hier sehr kurzfristig Resultate angefragt wurden stand bei dieser Arbeit keine individuelle CI sondern purer Pragmatismus im Vordergrund. Die verlinkten Mockups sind in nur 11 Stunden entstanden.',
+            'Eeezy war ein E-Mobility Startup, für dessen Frontend-Team ich als Freelancer Mockups auf Basis von Material UI erstellen sollte. Da hier sehr kurzfristig Resultate angefragt wurden stand bei dieser Arbeit keine individuelle CI sondern Pragmatismus im Vordergrund. Die verlinkten Mockups sind in 11 Stunden entstanden.',
           en:
-            'Eeezy was the startup of a friend of mine (a side project), for whose frontend team I was supposed to create mockups based on Material UI. Since results were requested at very short notice, this work was not characterized by an individual CI but by pure pragmatism. The linked mockups were created in just 11 hours.'
+            'Eeezy was an e-mobility startup for whose frontend team I was asked to create mockups based on Material UI as a freelancer. Since results were requested at very short notice, the focus of this work was not on an individual CI but on pragmatism. The linked mockups were created in 11 hours.'
         },
         showtext: false,
         links: [
@@ -299,13 +307,6 @@ export default {
             title: { de: 'Adobe XD Mockups', en: 'Adobe XD Mockups' },
             href:
               'https://xd.adobe.com/view/59a13cec-6071-4ab0-78d9-89ca7f28f72c-2f90/'
-          },
-          {
-            title: {
-              de: 'Aktuelle App (implementiert von eeezy)',
-              en: 'Current App (implemented by eeezy)'
-            },
-            href: 'https://eeezy.com/start'
           }
         ]
       },
@@ -316,9 +317,9 @@ export default {
         timeframe: { de: '2019', en: '2019' },
         text: {
           de:
-            'Der Climathon ist ein Hackathon und war ein ehrenamtliches Projekt innerhalb meiner Vereinsaktivitäten von Hackerstolz e.V. Die komplette Design-Identity des Mannheimer Climathon Events wurde von mir gestaltet und umgesetzt. Neben hier nicht verlinkten Ressourcen wie selbstgestalteten Teilnehmerbeuteln, Badges und anderen Print-Medien lag der Schwerpunkt auf der Event Landing Page. Da alle Arbeiten ehrenamtlich umgesetzt wurden, lag auch hier der Fokus nicht auf Perfektion, sondern auf Pragmatismus.',
+            'Der Climathon ist ein Hackathon und war ein ehrenamtliches Projekt innerhalb meiner Vereinsaktivitäten von Hackerstolz e.V. Die komplette Design-Identity des Mannheimer Climathon Events wurde von mir gestaltet und als Nuxt-Anwendung umgesetzt. Neben selbstgestalteten Teilnehmerbeuteln, Badges und anderen Print-Medien lag der Schwerpunkt auf der Event Landing Page. Da alle Arbeiten ehrenamtlich umgesetzt wurden, lag der Fokus nicht auf Perfektion, sondern auf Pragmatismus.',
           en:
-            'The Climathon is a hackathon and was a voluntary project within my club activities of Hackerstolz e.V. The complete design identity of the Mannheim Climathon Event was designed and implemented by me. Apart from resources not linked here, such as custom participant bags, badges and other print media, the major part was the event landing page. As all work was done on a voluntary basis, the focus was not on perfection but on pragmatism.'
+            'The Climathon is a hackathon and was a voluntary project within my club activities of Hackerstolz e.V. The complete design identity of the Mannheim Climathon Event was designed and implemented as nuxt application by me. Apart from resources, such as custom participant bags, badges and other print media, the major part was the event landing page. As all work was done on a voluntary basis, the focus was not on perfection but on pragmatism.'
         },
         showtext: false,
         links: [
@@ -425,14 +426,14 @@ p {
 <i18n>
 {
   "en": {
-    "about": "Readme",
-    "links": "Stalk me on...",
+    "about": "README",
+    "links": "Links & More",
     "portfolio": "Portfolio",
     "explore": "Explore Resources"
   },
   "de": {
-    "about": "Liesmich",
-    "links": "Stalkt mich auf...",
+    "about": "README",
+    "links": "Links & Mehr",
     "portfolio": "Portfolio",
     "explore": "Ressourcen Erkunden"
   }
