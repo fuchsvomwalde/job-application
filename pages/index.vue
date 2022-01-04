@@ -59,9 +59,9 @@
                   `to bottom, ${hexToRgbA(
                     project.gradientColor,
                     0
-                  )}, ${hexToRgbA(project.gradientColor, 0.2)}, ${hexToRgbA(
+                  )}, ${hexToRgbA(project.gradientColor, 0.4)}, ${hexToRgbA(
                     project.gradientColor,
-                    0.8
+                    0.95
                   )}`
                 "
                 height="200px"
@@ -81,7 +81,7 @@
                   {{ getI18n(project.text, $i18n.locale) }}
                 </p>
               </v-card-text>
-              <v-card-actions
+              <v-card-actions v-if="project.links.length > 0"
                 ><v-spacer></v-spacer>
                 <v-menu transition="scale-transition" origin="top center">
                   <template v-slot:activator="{ on }">
@@ -250,6 +250,29 @@ export default {
       }
     ],
     portfolio: [
+      {
+        title: { de: 'osapiens', en: 'osapiens' },
+        src: require('~/static/osapiens.jpg'),
+        gradientColor: '#000000',
+        timeframe: { de: '2020-2022', en: '2020-2022' },
+        text: {
+          de:
+            'Bei osapiens sind meine Aufgaben der Aufbau und die Unterstützung von Teams, die Erstellung unserer UI/UX-Designstrategie sowie abgeleiteter Design-Sokumente und -Bibliotheken, die Optimierung von Softwareentwicklungsprozessen und die Beteiligung an der Mockup-Erstellung sowie Fullstack-Entwicklung unserer mehr-mandantenfähigen Cloud-Anwendungen. Programme und Technologien mit denen ich hierbei arbeite sind: osapiens Cloud-Technologie, REST, TypeScript, React, Storybook, React-Native, Webpack, Material UI, Electron, Node, Adobe XD und Figma.',
+          en:
+            'At osapiens, my responsibilities are to build and support teams, create our UI/UX design strategy and derived design documents and libraries, optimize software development processes, and participate in mockup creation and fullstack development of our multi-tenant cloud applications. Programs and technologies I work with here are: osapiens cloud technology, REST, TypeScript, React, Storybook, React-Native, Webpack, Material UI, Electron, Node, Adobe XD and Figma.'
+        },
+        showtext: false,
+        links: [
+          {
+            title: {
+              de: 'Portfolio Overview (FigJam)',
+              en: 'Portfolio Overview (FigJam)'
+            },
+            href:
+              'https://www.figma.com/file/Ru4HmIfK1i0wZtUDmEa0Ux/osapiens-Portfolio'
+          }
+        ]
+      },
       {
         title: { de: 'PulseShift', en: 'PulseShift' },
         src: require('~/static/bgr_purple.jpg'),

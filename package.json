@@ -1,7 +1,7 @@
 {
   "name": "job-application",
   "version": "1.0.0",
-  "description": "Nuxt / Prisma / etc. Playground",
+  "description": "My portfolio as nuxt application to gain experience with nuxt, vercel and co.",
   "author": "Jascha A. Quintern",
   "private": true,
   "scripts": {

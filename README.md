@@ -1,6 +1,6 @@
 # Job Application
 
-Auto-deployment via zeit.co is active, find here the [Live Application](https://job-application.now.sh). This is a spontaneous project experiment for explorative experimentation with different frameworks and technologies to achieve an acceptable result pragmatically.
+Auto-deployment via vercel is active, find here the [Live Application](https://job-application.vercel.app/). This is a spontaneous project experiment for explorative experimentation with different frameworks and technologies to achieve an acceptable result pragmatically.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ $ yarn dev
 $ yarn build-ssr
 $ yarn start
 
-# generate static project (renamed for zeit.co hosting)
+# generate static project (renamed for vercel hosting)
 $ yarn build
 ```
 
