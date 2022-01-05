@@ -10,14 +10,17 @@ module.exports = {
     ecmaVersion: 8
   },
   extends: [
-    '@nuxtjs/eslint-config-typescript',
-    '@nuxtjs',
-    'prettier',
-    'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended'
+    // '@nuxtjs/eslint-config-typescript',
+    // '@nuxtjs'
+    // 'prettier',
+    // 'prettier/vue',
+    // 'plugin:prettier/recommended',
+    // 'plugin:nuxt/recommended'
   ],
-  plugins: ['prettier', 'nuxt'],
+  plugins: [
+    // 'prettier',
+    // 'nuxt'
+  ],
   // add your custom rules here
   rules: {}
 }

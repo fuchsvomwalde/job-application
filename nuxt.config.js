@@ -1,4 +1,5 @@
 export default {
+  target: 'static',
   /*
    ** Headers of the page
    */
@@ -33,9 +34,9 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
     // Doc: https://typescript.nuxtjs.org/guide/setup.html#installation
     '@nuxt/typescript-build'
@@ -64,8 +65,29 @@ export default {
       }
     ],
     // Doc: https://github.com/Developmint/nuxt-webfontloader
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    // Doc: https://github.com/stephenkr/nuxt-password-protect
+    'nuxt-password-protect'
   ],
+  /*
+   ** Password protect config
+   */
+  passwordProtect: {
+    enabled: true,
+    formPath: '/password',
+    password: process.env.PASSWORD || 'test',
+    tokenSeed: 101010,
+    queryString: '_pw',
+    cookieName: '_password',
+    cookie: {
+      prefix: '',
+      expires: 5
+    }
+    // ignoredPaths: ['/public-page']
+  },
+  router: {
+    middleware: ['password-protect']
+  },
   /*
    ** Load webfonts
    */
