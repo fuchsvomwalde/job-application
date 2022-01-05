@@ -265,8 +265,8 @@ export default {
         links: [
           {
             title: {
-              de: 'Portfolio Overview (FigJam)',
-              en: 'Portfolio Overview (FigJam)'
+              de: 'Work Samples (FigJam)',
+              en: 'Work Samples (FigJam)'
             },
             href:
               'https://www.figma.com/file/Ru4HmIfK1i0wZtUDmEa0Ux/osapiens-Portfolio'
@@ -274,10 +274,10 @@ export default {
         ]
       },
       {
-        title: { de: 'PulseShift', en: 'PulseShift' },
+        title: { de: 'PulseShift & CAMELOT MC', en: 'PulseShift & CAMELOT MC' },
         src: require('~/static/bgr_purple.jpg'),
         gradientColor: 'primary',
-        timeframe: { de: '2016-2019', en: '2016-2019' },
+        timeframe: { de: '2016-2020', en: '2016-2020' },
         text: {
           de:
             'Als Mitgründer von PulseShift war ich verantwortlich für alle Design und Frontend-Themen unserer Cloud-Lösungen: UI/UX Konzeption und Design sowie Architektur und Implementierung des technischen Frontends. Da PulseShift nun Bestandteil der CAMELOT MC ist, existieren hier nur sehr eingeschränkt öffentlich zugängliche Ressourcen. Eine Demo Anwendung unseres Kernproduktes und ein nicht in Produktion gegangenes Mockup stehen jedoch zur Verfügung um einen Ausschnitt meiner Tätigkeiten aus diesen dreieinhalb Jahre zu erhalten.',

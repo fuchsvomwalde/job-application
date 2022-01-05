@@ -6,7 +6,7 @@
       height="144"
       fixed
       app
-      elevation="10"
+      elevation="5"
     >
       <v-container>
         <v-layout justify-center align-center>
