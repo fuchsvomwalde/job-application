@@ -58,7 +58,7 @@
         </v-layout>
       </v-container>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <nuxt />
       <v-footer class="white--text">
         <v-container>
@@ -79,7 +79,7 @@
           </v-layout>
         </v-container>
       </v-footer>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
